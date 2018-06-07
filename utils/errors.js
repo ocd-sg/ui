@@ -4,5 +4,6 @@ const handleError = (error) => () => {
 }
 
 module.exports = {
-  missing: handleError('missing package or task')
+  missingPackage: handleError('missing package'),
+  missingTask: handleError('missing task')
 }
