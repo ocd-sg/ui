@@ -13,7 +13,10 @@ module.exports = (baseConfig) => ({
         include: paths.projectSourcePath,
         use: [
           {
-            loader: require.resolve('ts-loader')
+            loader: require.resolve('ts-loader'),
+            options: {
+              transpileOnly: true
+            }
           }
         ]
       },
