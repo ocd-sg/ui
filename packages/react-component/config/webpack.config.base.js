@@ -1,11 +1,11 @@
-const paths = require('../../utils/paths')
+const paths = require('../../../utils/paths')
 const webpack = require('webpack')
 
 module.exports = {
   module: {
     rules: [
       {
-        test: /(\.jsx|\.js)$/,
+        test: /\.tsx?$/,
         include: paths.projectSourcePath,
         use: [
           {
@@ -19,8 +19,7 @@ module.exports = {
     alias: {}
   },
   externals: {},
-  plugins: [
-    new webpack.EnvironmentPlugin(['NODE_ENV'])
-  ],
+  // plugins: [new webpack.EnvironmentPlugin(['NODE_ENV'])],
+  plugins: [],
   stats: 'minimal'
 }
