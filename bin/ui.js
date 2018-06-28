@@ -4,17 +4,17 @@ const paths = require('../utils/paths')
 const errors = require('../utils/errors')
 const args = process.argv.slice(2)
 
-const packages = fs.readdirSync(paths.modulePackagesPath).reduce(
-  (memo, package) => ({
+const modules = fs.readdirSync(paths.moduleModulesPath).reduce(
+  (memo, _module) => ({
     ...memo,
-    [package]: require(`${paths.modulePackagesPath}/${package}`)
+    [_module]: require(`${paths.moduleModulesPath}/${_module}`)
   }),
   {}
 )
 
-const [_package, _task] = args
-const task = packages[_package]
-  ? packages[_package][_task] || errors.missingTask
-  : errors.missingPackage(packages[_package] && packages[_package][_task])
+const [_module, _task] = args
+const task = modules[_module]
+  ? modules[_module][_task] || errors.missingTask
+  : errors.missingPackage(modules[_module] && modules[_module][_task])
 
 task()

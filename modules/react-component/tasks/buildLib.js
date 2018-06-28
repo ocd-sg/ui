@@ -3,12 +3,13 @@ const path = require('path')
 const paths = require('../../../utils/paths')
 
 const buildLib = () => {
-  const webpack = require.resolve('webpack/bin/webpack')
-  const config = path.resolve(
-    __dirname,
-    '../config/webpack.config.build-lib.js'
-  )
-  const child = cp.spawn(webpack, `--config ${config}`.split(' '))
+  const tsc = require.resolve('typescript/bin/tsc')
+  const child = cp.spawn(tsc, [
+    '--project',
+    paths.projectPath,
+    '--outDir',
+    paths.projectBuildLibPath
+  ])
 
   child.stdout.pipe(process.stdout)
   child.stderr.pipe(process.stderr)

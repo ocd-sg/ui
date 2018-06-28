@@ -12,5 +12,5 @@ module.exports = {
   projectBuildLibPath: path.resolve(projectPath, 'build/lib'),
   projectNodeModulesPath: path.resolve(projectPath, 'node_modules'),
   modulePath,
-  modulePackagesPath: path.resolve(modulePath, 'packages')
+  moduleModulesPath: path.resolve(modulePath, 'modules')
 }

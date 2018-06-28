@@ -20,9 +20,19 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "paths": {
-      "app/*": ["*"]
+      "app/*": [
+        "lib/*"
+      ]
     }
   },
-  "include" : ["src/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+  "include" : [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "**/*test.ts",
+    "**/*story.ts*"
+  ]
 }
