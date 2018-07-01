@@ -17,6 +17,8 @@ const initPackage = () => {
     lint: 'ui react-component lint'
   }
 
+  package.main = 'build/lib/index.js'
+
   fs.writeFileSync(paths.projectPackagePath, JSON.stringify(package, null, 2))
 }
 
