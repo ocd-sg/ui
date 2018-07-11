@@ -21,6 +21,33 @@ const config = {
     publicPath: `http://${HOST}:${PORT}/`,
     filename: 'bundle.js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        include: paths.projectSourcePath,
+        use: [
+          {
+            loader: require.resolve('ts-loader'),
+            options: {
+              transpileOnly: true
+            }
+          }
+        ]
+      },
+      {
+        test: /(\.css)$/,
+        use: [
+          {
+            loader: require.resolve('style-loader')
+          },
+          {
+            loader: require.resolve('css-loader')
+          }
+        ]
+      }
+    ]
+  },
   devServer: {
     host: HOST,
     port: PORT,
