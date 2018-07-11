@@ -1,3 +1,5 @@
+const fs = require('fs')
+const path = require('path')
 const paths = require('../../../utils/paths')
 const webpack = require('webpack')
 const baseConfig = require('./webpack.config.base')
@@ -6,6 +8,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin')
 
 const { HOST = 'localhost', PORT = 9000, TITLE = 'Module' } = process.env
+
+const overrides = fs.existsSync(path.resolve(paths.projectPath, 'webpack.config.dev.js'))
+  ? require(path.resolve(paths.projectPath, 'webpack.config.dev.js'))
+  : {}
 
 const config = {
   ...baseConfig,
@@ -56,7 +62,7 @@ const config = {
     stats: 'minimal',
     proxy: {
       '/api': {
-        target: 'http://localhost:8082',
+        target: 'http://localhost:8080',
         secure: false
       }
     }
@@ -69,7 +75,8 @@ const config = {
     new HtmlWebpackPlugin({
       title: TITLE
     })
-  ]
+  ],
+  ...overrides
 }
 
 module.exports = config
