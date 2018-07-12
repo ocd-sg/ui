@@ -10,13 +10,11 @@ const { TITLE = 'Module' } = process.env
 const config = {
   ...baseConfig,
   mode: 'production',
-  module: {
-    ...baseConfig.module
-  },
   entry: [require.resolve('../app')],
   output: {
     path: paths.projectBuildAppPath,
-    filename: 'bundle.min.js'
+    filename: 'bundle.min.js',
+    globalObject: 'this'
   },
   plugins: [
     ...baseConfig.plugins,
