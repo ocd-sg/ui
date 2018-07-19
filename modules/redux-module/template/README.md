@@ -45,56 +45,45 @@ Application:
 - Redux
 - Redux Observable
 - RxJS
-- Mapbox GL
 - D3
 
 ### Structure
 
 ```
 .
-├── dist/                   # compiled files for distribution as an npm package
-├── app/                    # compiled files as a standalone interactive module
+├── build/
+│   ├── app/                # compiled files as a standalone interactive module
+│   └── lib/                # compiled files for distribution as an npm package
 └── src/
-    ├── app/                # files to wrap and present the module as it can be served by dev-server or compiled with build-example
-    │   ├── index.js
-    │   └── styles.scss
-    ├── lib/                # core source files for the module
-    │   ├── components/     # presentational components
-    │   ├── config/         # static configuration files
-    │   ├── containers/     # container components
-    │   ├── reducers/       # reducers and state
-    │   │   └── data.js     # API data related reducers and state, much AJAX lives here
-    │   │   └── index.js    # essentially a table of contents for reducers and their actions
-    │   │   └── state.js    # application related state
-    │   ├── utils/          # various self-contained pure functions
-    │   ├── index.js
-    │   └── styles.scss
-    └── index.js            # entry point, handles hot reload
+    ├── config/             # static configuration files
+    ├── interface/
+    │   ├── Module/         # layout of the interface
+    │   ├── ...
+    │   └── index.ts        # connects `store` with interface
+    ├── store/
+    │   ├── core/           # core state, application initialization
+    │   ├── ...
+    │   └── index.ts        # registration of sub-stores, connected epics
+    ├── types/              # type definitions
+    ├── utils/              # various self-contained pure functions
+    └── index.ts            preo# entry point into the module
 ```
 
 ## Basic Usage
 
 ```
-# install dependencies
-npm install
+npm install                 # install dependencies
 
-# run watcher to monitor file changes and execute test cases automatically
-npm run test
+npm run test                # run tests
+npm run test:watch          # run tests in watch mode
 
-# run test once and produce coverage output
-npm run coverage
+npm run dev                 # run webpack-dev-server for development
 
-# run webpack-dev-server for development
-npm run dev
-
-# compile source code in ./src/lib to ./dist for production-ready version for distribution
-npm run build
-
-# compile source code in ./src/app and ./src/lib to ./example for standalone interactive module
-npm run build-example
+npm run build:lib           # compile source code in ./src to ./build/lib for production-ready version for distribution
+npm run build:app           # compile source code in ./src to ./build/app for standalone interactive module
 ```
 
-## Design Principles
+## Design Principles  
 
 Similar to [`ui-react-component`](https://github.com/ocd-sg/ui-react-component), we utilise the concept of *presentational & container components* to bring structure to our visual and interactive components.
 
