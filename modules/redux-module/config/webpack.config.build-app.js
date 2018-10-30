@@ -2,7 +2,7 @@ const paths = require("../../../utils/paths");
 const webpack = require("webpack");
 const baseConfig = require("./webpack.config.base");
 
-const MiniCssExtractTextPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const { TITLE = "Module" } = process.env;
@@ -50,7 +50,11 @@ const config = {
       chunks: "all"
     }),
     new HtmlWebpackPlugin({
-      title: TITLE
+      title: TITLE,
+      meta: {
+        description: require(paths.projectPackagePath).description,
+        viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+      }
     })
   ],
   optimization: {
