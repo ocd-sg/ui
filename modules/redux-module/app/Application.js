@@ -2,8 +2,6 @@ const React = require('react')
 
 const Module = require('app')
 
-document.title = Module.label
-
 const Application = () =>
   React.createElement(
     'div',
