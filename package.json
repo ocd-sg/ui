@@ -35,6 +35,7 @@
     "@types/react-redux": "^6.0.9",
     "@types/storybook__react": "^3.0.9",
     "ava": "^0.25.0",
+    "commander": "^2.19.0",
     "css-loader": "^1.0.1",
     "enzyme": "^3.7.0",
     "html-webpack-plugin": "^3.2.0",
@@ -65,7 +66,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "deprecated": false,
-  "description": "Let’s make life better.",
+  "description": "Packaged tooling for React & Redux projects",
   "homepage": "https://github.com/ocd-sg/ui#readme",
   "keywords": [],
   "license": "MIT",

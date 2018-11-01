@@ -10,9 +10,14 @@ Let’s make life better.
 
 ## Usage
 
-```
+```bash
 npm install ocd-sg/ui
-npx ui <react-component|redux-module> init
+
+# list available modules
+npx ui list
+
+# initialize a module
+npx ui init <react-component|redux-module>
 
 npm run dev
 npm run build:app
