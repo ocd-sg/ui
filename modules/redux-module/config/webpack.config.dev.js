@@ -14,11 +14,16 @@ const overrides = fs.existsSync(path.resolve(paths.projectPath, 'webpack.config.
   : {}
 
 const config = {
-  ...baseConfig,
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
+  // FIXME: wait for React hooks to work with `react-hot-loader`
+  // entry: [
+  //   'react-hot-loader/patch',
+  //   `webpack-dev-server/client?http://${HOST}:${PORT}`,
+  //   'webpack/hot/only-dev-server',
+  //   require.resolve('../app')
+  // ],
   entry: [
-    'react-hot-loader/patch',
     `webpack-dev-server/client?http://${HOST}:${PORT}`,
     'webpack/hot/only-dev-server',
     require.resolve('../app')
@@ -37,6 +42,10 @@ const config = {
     proxy: {
       '/api': {
         target: 'http://localhost:8080',
+        secure: false
+      },
+      '/data': {
+        target: 'http://localhost:5000',
         secure: false
       }
     }
@@ -70,8 +79,11 @@ const config = {
     new HtmlWebpackPlugin({
       title: TITLE
     })
-  ],
-  ...overrides
+  ]
 }
 
-module.exports = config
+module.exports = {
+  ...baseConfig,
+  ...config,
+  ...overrides
+}
