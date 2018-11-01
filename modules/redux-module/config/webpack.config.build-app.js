@@ -24,21 +24,15 @@ const config = {
         use: [
           {
             loader: require.resolve("ts-loader"),
-            options: {
-              transpileOnly: true
-            }
+            options: { transpileOnly: true }
           }
         ]
       },
       {
         test: /(\.css)$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: require.resolve("css-loader")
-          }
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: require.resolve("css-loader") }
         ]
       }
     ]
