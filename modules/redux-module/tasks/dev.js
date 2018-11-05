@@ -1,4 +1,3 @@
-const cp = require('child_process')
 const path = require('path')
 const paths = require('../../../utils/paths')
 
