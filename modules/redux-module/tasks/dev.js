@@ -1,19 +1,29 @@
+const WebPackDevServer = require('webpack-dev-server')
 const path = require('path')
-const paths = require('../../../utils/paths')
+const webpack = require('webpack')
+const config = require('../config/webpack.config.dev')
 
-const dashboard = require('webpack-dashboard/bin/webpack-dashboard')
+const Dashboard = require('webpack-dashboard')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 const dev = () => {
-  const webpackDevServer = require.resolve(
-    'webpack-dev-server/bin/webpack-dev-server'
+  const dashboard = new Dashboard({ color: 'cyan' })
+  const webpackOptions = {
+    ...config,
+    plugins: [
+      ...config.plugins,
+      new DashboardPlugin(dashboard.setData)
+    ]
+  }
+  const devServerOptions = {
+    ...config.devServer,
+    publicPath: config.output.publicPath
+  }
+  const server = new WebPackDevServer(
+    webpack(webpackOptions),
+    devServerOptions
   )
-  const config = path.resolve(__dirname, '../config/webpack.config.dev.js')
-  const { name } = require(paths.projectPackagePath)
-  dashboard({
-    argv: `_ _ --color cyan --title dev:${name} -- ${webpackDevServer} --port 9000 --config ${config}`.split(
-      ' '
-    )
-  })
+  server.listen(config.devServer.port, config.devServer.host)
 }
 
 module.exports = dev

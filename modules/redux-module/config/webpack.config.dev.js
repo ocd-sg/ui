@@ -5,7 +5,6 @@ const webpack = require('webpack')
 const baseConfig = require('./webpack.config.base')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
 
 const { HOST = 'localhost', PORT = 9000, TITLE = 'Module' } = process.env
 
@@ -25,19 +24,18 @@ const config = {
   // ],
   entry: [
     `webpack-dev-server/client?http://${HOST}:${PORT}`,
-    'webpack/hot/only-dev-server',
+    'webpack/hot/dev-server',
     require.resolve('../app')
   ],
   output: {
     publicPath: `http://${HOST}:${PORT}/`,
-    filename: 'bundle.js',
-    globalObject: 'this'
+    filename: 'bundle.js'
   },
   devServer: {
     host: HOST,
     port: PORT,
-    headers: { 'Access-Control-Allow-Origin': '*' },
     hot: true,
+    quiet: true,
     stats: 'minimal',
     proxy: {
       '/api': {
@@ -73,7 +71,6 @@ const config = {
   },
   plugins: [
     ...baseConfig.plugins,
-    new DashboardPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({

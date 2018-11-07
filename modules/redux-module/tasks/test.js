@@ -1,13 +1,15 @@
-const cp = require('child_process')
-const path = require('path')
-const paths = require('../../../utils/paths')
+const MemoryFS = require('memory-fs')
+const webpack = require('webpack')
+const config = require('../config/webpack.config.test.js')
 
 const test = () => {
-  const tape = path.resolve(require.resolve('tape'), 'bin/tape')
-  const child = cp.spawn(tape, '-r ts-node/register **/*.test.ts'.split(' '))
+  const fs = new MemoryFS()
+  const compiler = webpack(config)
 
-  child.stdout.pipe(process.stdout)
-  child.stderr.pipe(process.stderr)
+  compiler.outputFileSystem = fs
+  compiler.run(() => {
+    eval(fs.readFileSync('/bundle.js', 'utf8'))
+  })
 }
 
 module.exports = test

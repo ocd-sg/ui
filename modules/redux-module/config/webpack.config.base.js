@@ -11,9 +11,7 @@ const config = {
     }
   },
   externals: [],
-  plugins: [
-    // new webpack.EnvironmentPlugin(['NODE_ENV'])
-  ],
+  plugins: [],
   stats: 'minimal'
 }
 

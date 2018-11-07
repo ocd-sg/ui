@@ -1,17 +1,16 @@
-const cp = require('child_process')
-const path = require('path')
-const paths = require('../../../utils/paths')
+const webpack = require('webpack')
+const config = require('../config/webpack.config.build-app')
 
 const buildApp = () => {
-  const webpack = require.resolve('webpack/bin/webpack')
-  const config = path.resolve(
-    __dirname,
-    '../config/webpack.config.build-app.js'
-  )
-  const child = cp.spawn(webpack, `--config ${config}`.split(' '))
+  const compiler = webpack(config)
+  compiler.run((err, stats) => {
+    if (err) { return console.error(err) }
 
-  child.stdout.pipe(process.stdout)
-  child.stderr.pipe(process.stderr)
+    console.log(stats.toString({
+      chunks: false,
+      colors: true
+    }))
+  })
 }
 
 module.exports = buildApp
