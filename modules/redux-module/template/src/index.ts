@@ -1,4 +1,4 @@
-import 'ui-tachyons-light'
+import '@ocd-sg/ui-tachyons-light'
 
 import Module from './interface'
 
