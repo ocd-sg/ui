@@ -1,8 +1,6 @@
 const paths = require('../../../utils/paths')
 const webpack = require('webpack')
 
-const DashboardPlugin = require('webpack-dashboard/plugin')
-
 module.exports = (baseConfig) => ({
   ...baseConfig,
   module: {
@@ -33,7 +31,7 @@ module.exports = (baseConfig) => ({
       }
     ]
   },
-  plugins: [...baseConfig.plugins, new DashboardPlugin()],
+  plugins: [...baseConfig.plugins],
   resolve: {
     ...baseConfig.resolve,
     extensions: ['.ts', '.tsx', '.js', '.json', '.jsx'],
