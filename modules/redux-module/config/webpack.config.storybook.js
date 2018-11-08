@@ -37,6 +37,7 @@ module.exports = (baseConfig) => ({
     extensions: ['.ts', '.tsx', '.js', '.json', '.jsx'],
     alias: {
       project: paths.projectSourcePath,
+      app: paths.projectSourcePath,
       react: require.resolve('react')
     },
     symlinks: false
