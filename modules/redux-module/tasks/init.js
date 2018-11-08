@@ -12,6 +12,7 @@ const initPackage = () => {
     'build:lib': 'ui redux-module build:lib',
     'build:app': 'ui redux-module build:app',
     dev: 'ui redux-module dev',
+    storybook: 'ui redux-module storybook',
     test: 'ui redux-module test',
     'test:watch': 'ui redux-module test:watch',
     lint: 'ui redux-module lint'
