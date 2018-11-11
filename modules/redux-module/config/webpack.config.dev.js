@@ -29,7 +29,8 @@ const config = {
   ],
   output: {
     publicPath: `http://${HOST}:${PORT}/`,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    globalObject: 'this'  // for `worker-loader`
   },
   devServer: {
     host: HOST,

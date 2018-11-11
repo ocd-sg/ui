@@ -3,6 +3,10 @@ const webpack = require('webpack')
 
 module.exports = (baseConfig) => ({
   ...baseConfig,
+  output: {
+    ...baseConfig.output,
+    globalObject: 'this'  // for `worker-loader`
+  },
   module: {
     rules: [
       ...baseConfig.module.rules,

@@ -13,7 +13,8 @@ const config = {
   entry: [require.resolve("../app")],
   output: {
     path: paths.projectBuildAppPath,
-    filename: "bundle.min.js"
+    filename: "bundle.min.js",
+    globalObject: 'this'  // for `worker-loader`
   },
   module: {
     rules: [
