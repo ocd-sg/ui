@@ -10,6 +10,7 @@ module.exports = {
   projectBuildPath: path.resolve(projectPath, 'build'),
   projectBuildAppPath: path.resolve(projectPath, 'build/app'),
   projectBuildLibPath: path.resolve(projectPath, 'build/lib'),
+  projectBuildStorybookPath: path.resolve(projectPath, 'build/storybook'),
   projectNodeModulesPath: path.resolve(projectPath, 'node_modules'),
   modulePath,
   moduleModulesPath: path.resolve(modulePath, 'modules')
