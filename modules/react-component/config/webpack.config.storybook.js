@@ -1,11 +1,11 @@
 const paths = require('../../../utils/paths')
 const webpack = require('webpack')
 
-module.exports = (baseConfig) => ({
-  ...baseConfig,
+module.exports = ({ config }) => ({
+  ...config,
   module: {
     rules: [
-      ...baseConfig.module.rules,
+      ...config.module.rules,
       {
         test: /\.tsx?$/,
         include: paths.projectSourcePath,
@@ -31,9 +31,9 @@ module.exports = (baseConfig) => ({
       }
     ]
   },
-  plugins: [...baseConfig.plugins],
+  plugins: [...config.plugins],
   resolve: {
-    ...baseConfig.resolve,
+    ...config.resolve,
     extensions: ['.ts', '.tsx', '.js', '.json', '.jsx'],
     alias: {
       project: paths.projectSourcePath,
