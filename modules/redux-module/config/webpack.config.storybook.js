@@ -21,17 +21,6 @@ module.exports = ({ config }) => ({
             }
           }
         ]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: require.resolve('style-loader')
-          },
-          {
-            loader: require.resolve('css-loader')
-          }
-        ]
       }
     ]
   },
