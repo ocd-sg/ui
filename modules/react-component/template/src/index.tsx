@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import { Card } from '@blueprintjs/core'
+
 export type Props = {
   children?: React.ReactElement<any>[] | React.ReactElement<any>
   data: {
@@ -15,12 +17,14 @@ const Component = ({
     value: null
   }
 }: Props) => (
-  <div className="f6 pv2 ph2">
-    <h3 className="serif f4">
+  <Card className='w5' interactive={true}>
+    <h1>
       {data.id}: {data.value}
-    </h3>
-    {children}
-  </div>
+    </h1>
+    <div className='bp3-text-muted'>
+      {children}
+    </div>
+  </Card>
 )
 
 export default Component
