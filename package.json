@@ -79,8 +79,5 @@
     "url": "git+https://github.com/ocd-sg/ui.git"
   },
   "scripts": {},
-  "version": "0.2.8",
-  "devDependencies": {
-    "core-js": "^2.6.5"
-  }
+  "version": "0.2.8"
 }
