@@ -1,19 +1,17 @@
-const req = require.context('project', true, /story\.tsx$/)
-const { configure, addDecorator } = require('@storybook/react')
-const { withInfo } = require('@storybook/addon-info')
+require('tachyons')
+require('normalize.css')
+require('@blueprintjs/core/lib/css/blueprint.css')
 
-addDecorator(withInfo({
-  header: false,
-  inline: false,
-  propTables: null,
-  styles: (stylesheets) => ({
-    ...stylesheets,
-    children: {
-      ...stylesheets.children,
-      height: '100vh'
-    }
-  })
-}))
+const req = require.context('project', true, /story\.tsx$/)
+const { configure, addParameters } = require('@storybook/react')
+const { themes } = require('@storybook/theming')
+
+addParameters({
+  options: {
+    theme: themes.dark
+  }
+})
+
 configure(loadStories, module)
 
 function loadStories () {

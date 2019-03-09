@@ -1,4 +1,6 @@
-import '@ocd-sg/ui-tachyons-light'
+import 'tachyons'
+import 'normalize.css'
+import '@blueprintjs/core/lib/css/blueprint.css'
 
 import Module from './interface'
 

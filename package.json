@@ -29,13 +29,13 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "@storybook/addon-actions": "^5.0.0",
-    "@storybook/addon-centered": "^5.0.0",
-    "@storybook/addon-info": "^5.0.0",
-    "@storybook/react": "^5.0.0",
+    "@blueprintjs/core": "^3.14.1",
+    "@storybook/addon-actions": "^5.0.1",
+    "@storybook/addon-centered": "^5.0.1",
+    "@storybook/react": "^5.0.1",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
-    "@types/react-redux": "^7.0.2",
+    "@types/react-redux": "^7.0.3",
     "@types/storybook__react": "^4.0.1",
     "babel-loader": "^8.0.5",
     "commander": "^2.19.0",
@@ -54,6 +54,7 @@
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
     "style-loader": "^0.23.1",
+    "tachyons": "^4.11.1",
     "tape": "^4.10.1",
     "ts-loader": "^5.3.3",
     "tslint": "^5.13.1",
@@ -79,5 +80,5 @@
     "url": "git+https://github.com/ocd-sg/ui.git"
   },
   "scripts": {},
-  "version": "0.2.5"
+  "version": "0.2.6"
 }
