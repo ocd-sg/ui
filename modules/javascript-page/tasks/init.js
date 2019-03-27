@@ -9,14 +9,11 @@ const initPackage = () => {
 
   package.scripts = {
     ...package.scripts,
-    'build:lib': 'ui redux-module build:lib',
-    'build:app': 'ui redux-module build:app',
-    'build:storybook': 'ui redux-module build:storybook',
-    dev: 'ui redux-module dev',
-    storybook: 'ui redux-module storybook',
-    test: 'ui redux-module test',
-    'test:watch': 'ui redux-module test:watch',
-    lint: 'ui redux-module lint'
+    'build:app': 'ui javascript-page build:app',
+    dev: 'ui javascript-page dev',
+    test: 'ui javascript-page test',
+    'test:watch': 'ui javascript-page test:watch',
+    lint: 'ui javascript-page lint'
   }
 
   fs.writeFileSync(paths.projectPackagePath, JSON.stringify(package, null, 2))

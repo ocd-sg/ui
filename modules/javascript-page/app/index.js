@@ -1,2 +1,2 @@
-const Module = require('app')
+require('app')
 
