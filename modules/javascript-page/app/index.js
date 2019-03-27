@@ -1,0 +1,2 @@
+const Module = require('app')
+
