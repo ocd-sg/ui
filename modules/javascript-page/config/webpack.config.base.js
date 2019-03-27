@@ -5,8 +5,6 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     alias: {
-      react: require.resolve('react'),
-      'react-dom': require.resolve('react-dom'),
       app: paths.projectSourcePath
     }
   },
