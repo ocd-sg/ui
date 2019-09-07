@@ -6,5 +6,9 @@
   "scripts": {},
   "keywords": [],
   "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "9dad5035ade7020c58e3e4c9c4c9a306b7e4a5a9",
+  "publishConfig": {
+          "access": "public"
+  }
 }
