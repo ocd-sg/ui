@@ -1,0 +1,10 @@
+{
+  "name": "@ocd-ui/utils",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
+  "license": "ISC"
+}

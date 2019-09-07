@@ -1,0 +1,14 @@
+{
+  "name": "@ocd-ui/cli",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
+  "license": "ISC",
+  "dependencies": {
+    "@ocd-ui/utils": "^0.1.0",
+    "commander": "^3.0.1"
+  }
+}
