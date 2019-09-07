@@ -12,7 +12,7 @@ const dev = () => {
     ...config,
     plugins: [
       ...config.plugins,
-      new DashboardPlugin(dashboard.setData)
+      new DashboardPlugin({ handler: dashboard.setData })
     ]
   }
   const devServerOptions = {
