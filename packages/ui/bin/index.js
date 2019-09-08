@@ -2,5 +2,6 @@
 require('@ocd-ui/cli')([
   require('@ocd-ui/javascript-page'),
   require('@ocd-ui/react-component'),
-  require('@ocd-ui/react-module')
+  require('@ocd-ui/react-module'),
+  require('@ocd-ui/redux-module')
 ])

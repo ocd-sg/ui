@@ -13,7 +13,8 @@
     "@ocd-ui/cli": "^0.1.1",
     "@ocd-ui/javascript-page": "^0.1.11",
     "@ocd-ui/react-component": "^0.1.11",
-    "@ocd-ui/react-module": "^0.1.11"
+    "@ocd-ui/react-module": "^0.1.11",
+    "@ocd-ui/redux-module": "^0.1.11"
   },
   "gitHead": "9dad5035ade7020c58e3e4c9c4c9a306b7e4a5a9",
   "publishConfig": {
