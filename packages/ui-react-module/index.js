@@ -1,4 +1,4 @@
 module.exports = {
-  name: 'react-module',
+  name: require('./package').name.replace('@ocd-ui/', ''),
   tasks: require('./tasks')
 }

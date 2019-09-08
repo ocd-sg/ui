@@ -10,8 +10,9 @@ const initPackage = () => {
 
   package.scripts = {
     ...package.scripts,
-    'build:app': `ui ${name} build:app`,
-    dev: `ui ${name} dev`,
+    'build:lib': `ui ${name} build:lib`,
+    'build:storybook': `ui ${name} build:storybook`,
+    storybook: `ui ${name} storybook`,
     test: `ui ${name} test`,
     'test:watch': `ui ${name} test:watch`,
     lint: `ui ${name} lint`

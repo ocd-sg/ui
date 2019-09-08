@@ -6,17 +6,18 @@ const { paths } = require('@ocd-ui/utils')
 const initPackage = () => {
   cp.spawnSync('npm', 'init --yes'.split(' '))
   const package = require(paths.package)
+  const name = require('../package').name.replace('@ocd-ui/', '')
 
   package.scripts = {
     ...package.scripts,
-    'build:lib': 'ui react-module build:lib',
-    'build:app': 'ui react-module build:app',
-    'build:storybook': 'ui react-module build:storybook',
-    dev: 'ui react-module dev',
-    storybook: 'ui react-module storybook',
-    test: 'ui react-module test',
-    'test:watch': 'ui react-module test:watch',
-    lint: 'ui react-module lint'
+    'build:lib': `ui ${name} build:lib`,
+    'build:app': `ui ${name} build:app`,
+    'build:storybook': `ui ${name} build:storybook`,
+    dev: `ui ${name} dev`,
+    storybook: `ui ${name} storybook`,
+    test: `ui ${name} test`,
+    'test:watch': `ui ${name} test:watch`,
+    lint: `ui ${name} lint`
   }
 
   fs.writeFileSync(paths.package, JSON.stringify(package, null, 2))
