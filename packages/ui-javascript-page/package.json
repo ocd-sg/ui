@@ -1,6 +1,6 @@
 {
 	"name": "@ocd-ui/javascript-page",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "",
 	"main": "index.js",
 	"bin": {
@@ -10,7 +10,7 @@
 	"author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
 	"license": "ISC",
 	"dependencies": {
-		"@ocd-ui/cli": "^0.2.3",
+		"@ocd-ui/cli": "^0.2.4",
 		"@ocd-ui/utils": "^0.2.2",
 		"css-loader": "^2.1.1",
 		"glob": "^7.1.4",
