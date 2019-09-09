@@ -1,5 +1,4 @@
 module.exports = {
-  init: require('./init'),
   dev: require('./dev'),
   'build:app': require('./buildApp'),
   test: require('./test'),

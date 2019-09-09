@@ -1,4 +1,5 @@
 module.exports = {
   name: require('./package').name.replace('@ocd-ui/', ''),
-  tasks: require('./tasks')
+  tasks: require('./tasks'),
+  path: __dirname
 }

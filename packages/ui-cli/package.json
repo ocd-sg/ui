@@ -8,6 +8,7 @@
   "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
   "license": "ISC",
   "dependencies": {
+    "@ocd-ui/config": "^0.1.0",
     "@ocd-ui/utils": "^0.2.0",
     "commander": "^3.0.1"
   },

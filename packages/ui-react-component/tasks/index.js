@@ -1,5 +1,4 @@
 module.exports = {
-  init: require('./init'),
   storybook: require('./storybook'),
   'build:lib': require('./buildLib'),
   'build:storybook': require('./buildStorybook'),
