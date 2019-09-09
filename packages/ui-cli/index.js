@@ -71,7 +71,7 @@ module.exports = (modules) => {
   function init (_module) {
     const module = modules.find(({ name }) => name === _module)
     if (!module) {
-      return console.error('Module not found, run `list` to see available modules')
+      return list()
     } else {
       const { name, tasks } = module
       const template = path.resolve(module.path, 'template')
