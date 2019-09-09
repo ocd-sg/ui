@@ -1,6 +1,6 @@
 {
   "name": "@ocd-ui/cli",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "",
   "main": "index.js",
   "scripts": {},
@@ -8,8 +8,8 @@
   "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
   "license": "ISC",
   "dependencies": {
-    "@ocd-ui/config": "^0.2.1",
-    "@ocd-ui/utils": "^0.2.1",
+    "@ocd-ui/config": "^0.2.2",
+    "@ocd-ui/utils": "^0.2.2",
     "commander": "^3.0.1"
   },
   "gitHead": "e03afa2b668688fddf45617a6c5d6645964f3467",

@@ -1,6 +1,6 @@
 {
   "name": "@ocd-ui/ui",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Packaged tooling for React & Redux projects",
   "bin": {
     "ui": "bin/index.js"
@@ -10,11 +10,11 @@
   "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
   "license": "ISC",
   "dependencies": {
-    "@ocd-ui/cli": "^0.2.1",
-    "@ocd-ui/javascript-page": "^0.2.1",
-    "@ocd-ui/react-component": "^0.2.1",
-    "@ocd-ui/react-module": "^0.2.1",
-    "@ocd-ui/redux-module": "^0.2.1"
+    "@ocd-ui/cli": "^0.2.2",
+    "@ocd-ui/javascript-page": "^0.2.2",
+    "@ocd-ui/react-component": "^0.2.2",
+    "@ocd-ui/react-module": "^0.2.2",
+    "@ocd-ui/redux-module": "^0.2.2"
   },
   "gitHead": "e03afa2b668688fddf45617a6c5d6645964f3467",
   "publishConfig": {
