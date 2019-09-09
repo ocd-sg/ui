@@ -1,13 +1,13 @@
 {
   "name": "@ocd-ui/utils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
   "author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
   "license": "ISC",
-  "gitHead": "9dad5035ade7020c58e3e4c9c4c9a306b7e4a5a9",
+  "gitHead": "e03afa2b668688fddf45617a6c5d6645964f3467",
   "publishConfig": {
     "access": "public"
   }
