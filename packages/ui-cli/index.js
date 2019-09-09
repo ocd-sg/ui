@@ -30,16 +30,16 @@ module.exports = (modules) => {
     const { name, tasks } = module
     program
       .command(`${name} [task]`)
-      .action((task) => {
+      .action((_task) => {
+        const task = tasks[_task]
         if (!task) {
-          console.log(`Available tasks for ${name}`)
-          console.log()
+          console.log(`Available tasks for ${name}:`)
           Object.keys(tasks)
             .forEach((task) => console.log(`  ${task}`))
-          console.log()
           return
+        } else {
+          task()
         }
-        tasks[task]()
       })
   })
 
@@ -49,9 +49,7 @@ module.exports = (modules) => {
 
   function list () {
     console.log('Available modules:')
-    console.log()
     modules.forEach(({ name }) => { console.log(`  ${name}`) })
-    console.log()
   }
 
   function update () {
@@ -67,7 +65,7 @@ module.exports = (modules) => {
       require.resolve('@ocd-ui/config/typescript/tsconfig.json'),
       paths.project
     ])
-    console.log('Updated config')
+    console.log('Updated config files')
   }
 
   function init (_module) {
@@ -116,7 +114,7 @@ module.exports = (modules) => {
         paths.project
       ])
 
-      console.log(`Initiallized ${name}.`)
+      console.log(`Initialized ${name}`)
     }
   }
 }
