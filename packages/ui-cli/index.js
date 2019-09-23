@@ -67,7 +67,7 @@ module.exports = (modules) => {
     ])
     cp.spawnSync('cp', [
       require.resolve('@ocd-ui/config/prettier/prettierrc.js'),
-      path.resolve(paths.project, '.prettierrc.js'
+      path.resolve(paths.project, '.prettierrc.js')
     ])
     console.log('Updated config files')
   }
