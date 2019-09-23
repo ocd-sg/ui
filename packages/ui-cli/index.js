@@ -65,6 +65,10 @@ module.exports = (modules) => {
       require.resolve('@ocd-ui/config/typescript/tsconfig.json'),
       paths.project
     ])
+    cp.spawnSync('cp', [
+      require.resolve('@ocd-ui/config/prettier/prettierrc.js'),
+      path.resolve(paths.project, '.prettierrc.js'
+    ])
     console.log('Updated config files')
   }
 
@@ -88,20 +92,7 @@ module.exports = (modules) => {
           }), {})
       }
       fs.writeFileSync(paths.package, JSON.stringify(package, null, 2))
-
-      // initialize with config
-      cp.spawnSync('cp', [
-        require.resolve('@ocd-ui/config/git/gitignore'),
-        path.resolve(paths.project, '.gitignore')
-      ])
-      cp.spawnSync('cp', [
-        require.resolve('@ocd-ui/config/typescript/tslint.json'),
-        paths.project
-      ])
-      cp.spawnSync('cp', [
-        require.resolve('@ocd-ui/config/typescript/tsconfig.json'),
-        paths.project
-      ])
+      console.log(`Initialized package.json`)
 
       // initialize with template
       cp.spawnSync('cp', [
@@ -113,6 +104,10 @@ module.exports = (modules) => {
         path.resolve(template, 'README.md'),
         paths.project
       ])
+      console.log(`Initialized template`)
+
+      // initialize with config
+      update()
 
       console.log(`Initialized ${name}`)
     }
