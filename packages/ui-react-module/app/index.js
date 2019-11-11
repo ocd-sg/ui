@@ -7,7 +7,7 @@ const container = document.createElement('div')
 container.setAttribute('id', 'container')
 document.body.appendChild(container)
 
-ReactDOM.render(React.createElement(Application, {}), container)
+ReactDOM.render(React.createElement(Application.default, {}), container)
 
 // FIXME: wait until React hooks work with `react-hot-loader`
 // const { AppContainer } = require('react-hot-loader')
