@@ -1,5 +1,4 @@
 const { paths } = require('@ocd-ui/utils')
-const webpack = require('webpack')
 const baseConfig = require('./webpack.config.base')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -7,14 +6,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const { TITLE = 'Module' } = process.env
 
+const overrides = fs.existsSync(
+  path.resolve(paths.project, 'webpack.config.build-app.js')
+)
+  ? require(path.resolve(paths.project, 'webpack.config.build-app.js'))
+  : {}
+
 const config = {
-  ...baseConfig,
   mode: 'production',
   entry: [require.resolve('../app')],
   output: {
     path: paths.app,
     filename: 'bundle.min.js',
-    globalObject: 'this'  // for `worker-loader`
+    globalObject: 'this' // for `worker-loader`
   },
   module: {
     rules: [
@@ -56,4 +60,8 @@ const config = {
   }
 }
 
-module.exports = config
+module.exports = {
+  ...baseConfig,
+  ...config,
+  ...overrides
+}

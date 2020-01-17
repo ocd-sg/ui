@@ -8,7 +8,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const { HOST = 'localhost', PORT = 9000, TITLE = 'Module' } = process.env
 
-const overrides = fs.existsSync(path.resolve(paths.project, 'webpack.config.dev.js'))
+const overrides = fs.existsSync(
+  path.resolve(paths.project, 'webpack.config.dev.js')
+)
   ? require(path.resolve(paths.project, 'webpack.config.dev.js'))
   : {}
 
@@ -30,7 +32,7 @@ const config = {
   output: {
     publicPath: `http://${HOST}:${PORT}/`,
     filename: 'bundle.js',
-    globalObject: 'this'  // for `worker-loader`
+    globalObject: 'this' // for `worker-loader`
   },
   devServer: {
     host: HOST,
