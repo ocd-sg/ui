@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 const { paths } = require('@ocd-ui/utils')
 const baseConfig = require('./webpack.config.base')
 
