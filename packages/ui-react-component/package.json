@@ -1,6 +1,6 @@
 {
 	"name": "@ocd-ui/react-component",
-	"version": "0.2.8",
+	"version": "0.2.14",
 	"description": "",
 	"main": "index.js",
 	"bin": {
@@ -10,7 +10,7 @@
 	"author": "Yin Shanyang <me@yinshanyang.com> (http://yinshanyang.com)",
 	"license": "ISC",
 	"dependencies": {
-		"@ocd-ui/cli": "^0.2.8",
+		"@ocd-ui/cli": "^0.2.14",
 		"@ocd-ui/utils": "^0.2.2",
 		"@storybook/addon-actions": "^5.3.18",
 		"@storybook/addon-centered": "^5.3.18",
